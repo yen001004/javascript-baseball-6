@@ -18,6 +18,7 @@ async function playGame() {
     printScore(score);
 
     if (score.strike === 3) {
+      Console.print(MESSAGE.SOLVED);
       const exit = await getExitCode();
       return exit;
     }
