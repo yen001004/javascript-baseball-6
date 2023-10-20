@@ -2,6 +2,8 @@ import { Console } from "@woowacourse/mission-utils";
 import { MESSAGE } from "./constants/constants.js";
 import getUserNum from "./functions/getUserNum.js";
 import generateNum from "./functions/generateNum.js";
+import getReplayCode from "./functions/getReplayCode.js";
+import getScore from "./functions/getScore.js";
 
 async function playGame() {
   const computerNum = generateNum();
@@ -9,11 +11,15 @@ async function playGame() {
 
   while (true) {
     const userNum = await getUserNum();
+    Console.print(userNum);
 
-    // 스트라이크, 볼
+    const score = getScore(computerNum, userNum);
+    Console.print(score);
 
-    // if 스트라이크
-    // getReplayCode
+    // TODO: 종료값 입력 받기
+    // if 스트라이크3
+    // const replay = getReplayCode();
+    // return replay;
   }
 }
 
