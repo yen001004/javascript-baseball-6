@@ -1,6 +1,10 @@
 const REPLAY_CODE = 1;
 const EXIT_CODE = 2;
 
+const NUM_LENGTH = 3;
+const MIN_NUM = 1;
+const MAX_NUM = 9;
+
 const MESSAGE = Object.freeze({
   START: "숫자 야구 게임을 시작합니다.",
   PROMPT: "숫자를 입력해주세요 : ",
@@ -13,4 +17,12 @@ const ERROR_MESSAGE = Object.freeze({
   NUM_FORMAT_ERROR: "[ERROR] 숫자가 잘못된 형식입니다.",
 });
 
-export { REPLAY_CODE, EXIT_CODE, MESSAGE, ERROR_MESSAGE };
+export {
+  REPLAY_CODE,
+  EXIT_CODE,
+  NUM_LENGTH,
+  MIN_NUM,
+  MAX_NUM,
+  MESSAGE,
+  ERROR_MESSAGE,
+};
