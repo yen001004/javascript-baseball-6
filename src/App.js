@@ -1,21 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
-import {
-  ERROR_MESSAGE,
-  EXIT_CODE,
-  MESSAGE,
-  REPLAY_CODE,
-} from "./constants/constants";
-
-async function getNumber() {
-  try {
-    const num = await Console.readLineAsync(MESSAGE.PROMPT);
-    if (num == REPLAY_CODE || num == EXIT_CODE) return true;
-    Console.print(num);
-    return false;
-  } catch (error) {
-    Console.print(ERROR_MESSAGE.ERROR);
-  }
-}
+import { MESSAGE } from "./constants/constants.js";
+import getUserNum from "./functions/getUserNum.js";
 
 class App {
   async play() {
@@ -23,7 +8,7 @@ class App {
 
     let isFinished = false;
     while (!isFinished) {
-      isFinished = await getNumber();
+      isFinished = await getUserNum();
     }
   }
 }
