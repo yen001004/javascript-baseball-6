@@ -1,4 +1,4 @@
-import { Console } from "@woowacourse/mission-utils.js";
+import { Console } from "@woowacourse/mission-utils";
 import { EXIT_CODE, MESSAGE, REPLAY_CODE } from "../constants/constants.js";
 
 async function getReplayCode() {
@@ -11,4 +11,4 @@ async function getReplayCode() {
   }
 }
 
-export default getReplayCode();
+export default getReplayCode;
