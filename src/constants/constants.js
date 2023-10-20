@@ -1,5 +1,5 @@
-const REPLAY_CODE = 1;
-const EXIT_CODE = 2;
+const REPLAY_CODE = "1";
+const EXIT_CODE = "2";
 
 const NUM_LENGTH = 3;
 const MIN_NUM = 1;
@@ -15,6 +15,7 @@ const MESSAGE = Object.freeze({
 const ERROR_MESSAGE = Object.freeze({
   ERROR: "[ERROR]",
   NUM_FORMAT_ERROR: "[ERROR] 숫자가 잘못된 형식입니다.",
+  EXIT_CODE_ERROR: "[ERROR] 잘못된 입력입니다.",
 });
 
 export {
