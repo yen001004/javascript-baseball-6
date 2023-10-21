@@ -5,26 +5,26 @@ import generateNum from "./functions/generateNum.js";
 import getExitCode from "./functions/getExitCode.js";
 import getScore from "./functions/getScore.js";
 import printScore from "./functions/printScore.js";
-import validateUserNum from "./functions/validateUserNum.js";
 
 async function playGame() {
   const computerNum = generateNum();
-  Console.print(computerNum);
+  // Console.print(computerNum);
 
   while (true) {
     const userNum = await getUserNum();
-
-    if (!validateUserNum(userNum)) {
-      Console.print(ERROR_MESSAGE.NUM_FORMAT_ERROR);
-      continue;
-    }
 
     const score = getScore(computerNum, userNum);
     printScore(score);
 
     if (score.strike === 3) {
-      const exit = await getExitCode();
-      return exit;
+      Console.print(MESSAGE.SOLVED);
+      try {
+        const exit = await getExitCode();
+        return exit;
+      } catch (error) {
+        Console.print(error);
+        return true;
+      }
     }
   }
 }

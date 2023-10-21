@@ -2,12 +2,17 @@ import { Console } from "@woowacourse/mission-utils";
 import { MESSAGE, ERROR_MESSAGE } from "../constants/constants.js";
 
 async function getUserNum() {
-  try {
-    const num = await Console.readLineAsync(MESSAGE.PROMPT);
-    return [...num].map(Number);
-  } catch (error) {
-    Console.print(ERROR_MESSAGE.ERROR);
+  const num = await Console.readLineAsync(MESSAGE.PROMPT);
+
+  if (!/^[1-9]{3}$/.test(num)) {
+    throw new Error(ERROR_MESSAGE.NUM_FORMAT_ERROR);
   }
+  const uniqueNum = new Set(num);
+  if (uniqueNum.size !== 3) {
+    throw new Error(ERROR_MESSAGE.DUPLICATE_NUM_ERROR);
+  }
+
+  return [...num].map(Number);
 }
 
 export default getUserNum;
