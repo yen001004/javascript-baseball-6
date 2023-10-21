@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import { MESSAGE } from "./constants/constants.js";
+import { MESSAGE, NUM_LENGTH } from "./constants/constants.js";
 import getUserNum from "./functions/getUserNum.js";
 import generateNum from "./functions/generateNum.js";
 import getExitCode from "./functions/getExitCode.js";
@@ -16,7 +16,7 @@ class App {
       const score = getScore(computerNum, userNum);
       printScore(score);
 
-      if (score.strike === 3) {
+      if (score.strike === NUM_LENGTH) {
         Console.print(MESSAGE.SOLVED);
 
         const exit = await getExitCode();
