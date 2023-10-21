@@ -6,20 +6,22 @@ import {
   REPLAY_CODE,
 } from "../constants/constants.js";
 
+const isEndCode = (num) => {
+  return num === REPLAY_CODE || num === EXIT_CODE;
+};
+
 async function getExitCode() {
   while (true) {
     const num = await Console.readLineAsync(MESSAGE.REPLAY_OR_EXIT);
 
-    if (isNaN(num) || (num !== REPLAY_CODE && num !== EXIT_CODE)) {
-      throw new Error(ERROR_MESSAGE.ERROR);
+    if (isNaN(num) || !isEndCode(num)) {
+      throw new Error(ERROR_MESSAGE.EXIT_CODE_ERROR);
     }
 
     if (num === REPLAY_CODE) {
       return false;
     } else if (num === EXIT_CODE) {
       return true;
-    } else {
-      Console.print(ERROR_MESSAGE.EXIT_CODE_ERROR);
     }
   }
 }
