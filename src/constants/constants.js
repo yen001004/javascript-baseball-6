@@ -15,6 +15,7 @@ const MESSAGE = Object.freeze({
 const ERROR_MESSAGE = Object.freeze({
   ERROR: "[ERROR]",
   NUM_FORMAT_ERROR: "[ERROR] 숫자가 잘못된 형식입니다.",
+  DUPLICATE_NUM_ERROR: "[ERROR] 서로 다른 세 자리 숫자를 입력해주세요.",
   EXIT_CODE_ERROR: "[ERROR] 잘못된 입력입니다.",
 });
 
