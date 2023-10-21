@@ -18,13 +18,9 @@ class App {
 
       if (score.strike === 3) {
         Console.print(MESSAGE.SOLVED);
-        try {
-          const exit = await getExitCode();
-          return exit;
-        } catch (error) {
-          Console.print(error);
-          return true;
-        }
+
+        const exit = await getExitCode();
+        return exit;
       }
     }
   }
