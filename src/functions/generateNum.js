@@ -11,6 +11,7 @@ function generateNum() {
       computer.push(number);
     }
   }
+
   return computer;
 }
 
