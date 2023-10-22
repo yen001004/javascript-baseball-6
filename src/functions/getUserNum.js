@@ -7,12 +7,13 @@ async function getUserNum() {
   if (!/^[1-9]{3}$/.test(num)) {
     throw new Error(ERROR_MESSAGE.NUM_FORMAT_ERROR);
   }
+
   const uniqueNum = new Set(num);
   if (uniqueNum.size !== NUM_LENGTH) {
     throw new Error(ERROR_MESSAGE.DUPLICATE_NUM_ERROR);
   }
 
-  return [...num].map(Number);
+  return Array.from(num, Number);
 }
 
 export default getUserNum;
